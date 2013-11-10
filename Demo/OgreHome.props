@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <OGRE_HOME>D:\Ogre\OgreSDK_vc10_v1-9-0unstable\</OGRE_HOME>
+	<!--debug suffix-->
+    <DebugSuffix Condition="'$(Configuration)'=='Debug'">_d</DebugSuffix>
+    <DebugSuffix Condition="'$(Configuration)'!='Debug'">
+    </DebugSuffix>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_PropertySheetDisplayName>OgreDependencies</_PropertySheetDisplayName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(OGRE_HOME)\include;$(OGRE_HOME)\include\OIS;$(OGRE_HOME)\include\OGRE;$(OGRE_HOME)\Samples\Common\include;$(OGRE_HOME)\boost;$(OGRE_HOME)\include\OGRE\Overlay</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(OGRE_HOME)\lib\$(Configuration);$(OGRE_HOME)\boost\lib;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OgreMain$(DebugSuffix).lib;OIS$(DebugSuffix).lib;OgreOverlay$(DebugSuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="OGRE_HOME">
+      <Value>$(OGRE_HOME)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
