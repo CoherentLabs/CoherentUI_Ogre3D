@@ -1,7 +1,7 @@
 /*
 -----------------------------------------------------------------------------
 This source file is part of OGRE
-    (Object-oriented Graphics Rendering Engine)
+	(Object-oriented Graphics Rendering Engine)
 For the latest info, see http://www.ogre3d.org/
 
 Copyright (c) 2000-2012 Torus Knot Software Ltd
@@ -46,6 +46,8 @@ namespace Ogre
 	class _OgreCoherentUIPluginExport CoherentUIViewListener
 	{
 	public:
+		virtual ~CoherentUIViewListener() {}
+
 		void onViewCreated(CoherentUIView* view);
 		void onUrlLoaded(CoherentUIView* view, const Ogre::String& url);
 
