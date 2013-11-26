@@ -196,7 +196,7 @@ namespace Ogre
 		Coherent::UI::SystemSettings settings;
 		settings.HostDirectory = COUI_HOST_PATH;
 
-		mUISystem = ::InitializeUISystem(COHERENT_KEY, settings, mUIListener);
+		mUISystem = ::InitializeUISystem(COHERENT_UI_SDK_VER, COHERENT_KEY, settings, mUIListener);
 		if (!mUISystem)
 		{
 			Ogre::LogManager::getSingleton().logMessage("Unable to initialize Coherent UI! Check log for details!");
