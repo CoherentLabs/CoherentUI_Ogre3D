@@ -60,7 +60,7 @@ namespace Ogre
 			height,
 			1,
 			PF_BYTE_BGRA,
-			TU_DEFAULT);      // TU_DYNAMIC_WRITE_ONLY_DISCARDABLE for often updated textures
+			TU_DYNAMIC_WRITE_ONLY_DISCARDABLE);
 
 		// Create a material using the texture
 		mTextureMaterial = MaterialManager::getSingleton().create(
