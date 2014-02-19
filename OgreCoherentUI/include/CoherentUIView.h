@@ -36,12 +36,14 @@ namespace UI
 {
 	class View;
 	class ViewListener;
+	class IEventHandler;
 }
 }
 
 namespace Ogre
 {
 	class CoherentUIViewListener;
+	class ICoherentEventHandler;
 
 	// A minimalistic wrapper for Coherent::UI::View
 	class _OgreCoherentUIPluginExport CoherentUIView
@@ -69,6 +71,8 @@ namespace Ogre
 		void triggerEvent(const Ogre::String& eventName, int arg1);
 		void triggerEvent(const Ogre::String& eventName, float arg1);
 		void triggerEvent(const Ogre::String& eventName, const Ogre::String& arg1);
+
+		void registerEvent(const Ogre::String& eventName, Coherent::UI::IEventHandler* handler);
 
 		Ogre::TexturePtr getTexture() const;
 		Ogre::MaterialPtr getTextureMaterial() const;

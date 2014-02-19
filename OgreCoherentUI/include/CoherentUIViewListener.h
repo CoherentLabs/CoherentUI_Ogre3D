@@ -46,12 +46,13 @@ namespace Ogre
 	class _OgreCoherentUIPluginExport CoherentUIViewListener
 	{
 	public:
+		CoherentUIViewListener() {}
 		virtual ~CoherentUIViewListener() {}
 
-		void onViewCreated(CoherentUIView* view);
-		void onUrlLoaded(CoherentUIView* view, const Ogre::String& url);
+		virtual void onViewCreated(CoherentUIView* view);
+		virtual void onUrlLoaded(CoherentUIView* view, const Ogre::String& url);
 
-		void onReadyForBindings(CoherentUIView* view, const Ogre::String& url);
+		virtual void onReadyForBindings(CoherentUIView* view, const Ogre::String& url);
 
 	private:
 		CoherentUIViewListener(const CoherentUIViewListener&);

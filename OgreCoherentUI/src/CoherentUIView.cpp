@@ -233,6 +233,15 @@ namespace Ogre
 	}
 
 	//-----------------------------------------------------------------------
+	void CoherentUIView::registerEvent(const Ogre::String& eventName, Coherent::UI::IEventHandler* handler)
+	{
+		if (mView)
+		{
+			mView->RegisterForEvent(eventName.c_str(), handler);
+		}
+	}
+
+	//-----------------------------------------------------------------------
 	Ogre::TexturePtr CoherentUIView::getTexture() const
 	{
 		return mTexture;

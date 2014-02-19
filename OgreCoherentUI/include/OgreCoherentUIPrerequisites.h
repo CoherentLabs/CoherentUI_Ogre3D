@@ -47,7 +47,6 @@ namespace Ogre
 #	define _OgreCoherentUIPluginExport
 #endif	// OGRE_WIN32
 
-
 }
 
 
