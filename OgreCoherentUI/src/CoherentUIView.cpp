@@ -31,6 +31,8 @@ THE SOFTWARE.
 #include <CoherentUIInputConvertor.h>
 #include <Coherent/UI/View.h>
 #include <Coherent/UI/InputEvents.h>
+#include <Coherent/UI/Binding/String.h>
+#include <Coherent/UI/Binding/Map.h>
 
 #if OGRE_WCHAR_T_STRINGS
 #error "[COUI] Currently OGRE wchar_t strings are not supported!"
@@ -229,6 +231,15 @@ namespace Ogre
 		if (mView)
 		{
 			mView->TriggerEvent(eventName.c_str(), arg1.c_str());
+		}
+	}
+
+	//-----------------------------------------------------------------------
+	void CoherentUIView::triggerEvent(const Ogre::String& eventName, const Ogre::NameValuePairList& arg1)
+	{
+		if (mView)
+		{
+			mView->TriggerEvent(eventName.c_str(), arg1);
 		}
 	}
 
