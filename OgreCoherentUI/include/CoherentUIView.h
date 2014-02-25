@@ -29,6 +29,7 @@ THE SOFTWARE.
 #define __CoherentUIView_H__
 
 #include <OgreCoherentUIPrerequisites.h>
+#include <OIS/OISMouse.h>
 
 namespace Coherent
 {
@@ -38,6 +39,11 @@ namespace UI
 	class ViewListener;
 	class IEventHandler;
 }
+}
+
+namespace OIS
+{
+	class KeyEvent;
 }
 
 namespace Ogre
