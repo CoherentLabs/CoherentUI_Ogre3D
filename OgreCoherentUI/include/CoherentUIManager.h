@@ -66,7 +66,8 @@ namespace Ogre
 			int width,
 			int height,
 			bool transparent,
-			Ogre::CoherentUIViewListener* listener
+			Ogre::CoherentUIViewListener* listener,
+			bool enableDepthWrite = false
 			);
 		void destroyView(Ogre::CoherentUIView* view);
 

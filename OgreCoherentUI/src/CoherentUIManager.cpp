@@ -124,7 +124,8 @@ namespace Ogre
 		int width,
 		int height,
 		bool transparent,
-		Ogre::CoherentUIViewListener* listener
+		Ogre::CoherentUIViewListener* listener,
+		bool enableDepthWrite
 		)
 	{
 		Ogre::CoherentUIView* result = NULL;
@@ -138,7 +139,7 @@ namespace Ogre
 			viewInfo.IsTransparent = transparent;
 
 			// TODO: Make refcounted
-			result = OGRE_NEW Ogre::CoherentUIView(listener, width, height);
+			result = OGRE_NEW Ogre::CoherentUIView(listener, width, height, enableDepthWrite);
 
 			std::wstring urlConverted(url.begin(), url.end());
 

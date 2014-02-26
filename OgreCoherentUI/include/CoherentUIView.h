@@ -87,7 +87,7 @@ namespace Ogre
 	private:
 		friend class CoherentUIViewListenerBridge;
 		friend class CoherentUIManager;
-		CoherentUIView(Ogre::CoherentUIViewListener* listener, int width, int height);
+		CoherentUIView(Ogre::CoherentUIViewListener* listener, int width, int height, bool enableDepthWrite);
 
 		CoherentUIView(const CoherentUIView&);
 		CoherentUIView& operator=(const CoherentUIView&);

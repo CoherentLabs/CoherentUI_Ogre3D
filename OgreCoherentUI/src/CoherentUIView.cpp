@@ -41,7 +41,7 @@ THE SOFTWARE.
 namespace Ogre
 {
 	//-----------------------------------------------------------------------
-	CoherentUIView::CoherentUIView(Ogre::CoherentUIViewListener* listener, int width, int height)
+	CoherentUIView::CoherentUIView(Ogre::CoherentUIViewListener* listener, int width, int height, bool enableDepthWrite)
 		: mView(NULL)
 	{
 		mViewListener = OGRE_NEW CoherentUIViewListenerBridge(this, listener);
@@ -71,6 +71,7 @@ namespace Ogre
 
 		mTextureMaterial->getTechnique(0)->getPass(0)->createTextureUnitState(textureName);
 		mTextureMaterial->getTechnique(0)->getPass(0)->setSceneBlending(SBF_ONE, SBF_ONE_MINUS_SOURCE_ALPHA);
+		mTextureMaterial->getTechnique(0)->getPass(0)->setDepthWriteEnabled(enableDepthWrite);
 	}
 
 	//-----------------------------------------------------------------------
