@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <OGRE_HOME>D:\Ogre19\OgreSDK_vc11_v1-9-0unstable</OGRE_HOME>
+    <OGRE_HOME>D:\Repos\Demos\ShadowOfSaturn\external\ogre</OGRE_HOME>
     <!--debug suffix-->
     <DebugSuffix Condition="'$(Configuration)'=='Debug'">_d</DebugSuffix>
     <DebugSuffix Condition="'$(Configuration)'!='Debug'">
@@ -13,10 +13,10 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(OGRE_HOME)\include;$(OGRE_HOME)\include\OIS;$(OGRE_HOME)\include\OGRE;$(OGRE_HOME)\Samples\Common\include;$(OGRE_HOME)\boost;$(OGRE_HOME)\include\OGRE\Overlay</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(OGRE_HOME)\include;$(OGRE_HOME)\OgreMain\include;$(OGRE_HOME)\include\OIS;$(OGRE_HOME)\Dependencies\include\OIS;$(OGRE_HOME)\include\OGRE;$(OGRE_HOME)\Samples\Common\include;$(OGRE_HOME)\boost;$(OGRE_HOME)\include\OGRE\Overlay;$(OGRE_HOME)\Dependencies\include\;$(OGRE_HOME)\include\;$(OGRE_HOME)\Components\Overlay\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(OGRE_HOME)\lib\$(Configuration);$(OGRE_HOME)\boost\lib;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(OGRE_HOME)\lib\$(Configuration);$(OGRE_HOME)\boost\lib;$(OGRE_HOME)\Dependencies\lib\$(Configuration)</AdditionalLibraryDirectories>
       <AdditionalDependencies>OgreMain$(DebugSuffix).lib;OIS$(DebugSuffix).lib;OgreOverlay$(DebugSuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
