@@ -33,6 +33,7 @@ THE SOFTWARE.
 #include <Coherent/UI/InputEvents.h>
 #include <Coherent/UI/Binding/String.h>
 #include <Coherent/UI/Binding/Map.h>
+#include <OgreHardwarePixelBuffer.h>
 
 #if OGRE_WCHAR_T_STRINGS
 #error "[COUI] Currently OGRE wchar_t strings are not supported!"
@@ -63,6 +64,14 @@ namespace Ogre
 			1,
 			PF_BYTE_BGRA,
 			TU_DYNAMIC_WRITE_ONLY_DISCARDABLE);
+
+		// Clear the texture
+		Ogre::HardwarePixelBufferSharedPtr pixelBuffer = mTexture->getBuffer();
+		pixelBuffer->lock(Ogre::HardwareBuffer::HBL_DISCARD);
+		const Ogre::PixelBox& pixelBox = pixelBuffer->getCurrentLock();
+		Ogre::uint32* dest = static_cast<Ogre::uint32*>(pixelBox.data);
+		std::memset(dest, 0, (width * 4 + pixelBox.getRowSkip()) * height);
+		pixelBuffer->unlock();
 
 		// Create a material using the texture
 		mTextureMaterial = MaterialManager::getSingleton().create(
