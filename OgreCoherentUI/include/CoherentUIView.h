@@ -69,20 +69,12 @@ namespace Ogre
 		void injectMouseDown(const OIS::MouseEvent& arg, OIS::MouseButtonID id);
 		void injectMouseUp(const OIS::MouseEvent& arg, OIS::MouseButtonID id);
 
-		// To keep the interface oblivious of Coherent UI we
-		// define some common overloads of triggerEvent.
-		// If you need a specific overload, you'll have to define it
-		// yourself like these ones for the moment.
-		void triggerEvent(const Ogre::String& eventName);
-		void triggerEvent(const Ogre::String& eventName, int arg1);
-		void triggerEvent(const Ogre::String& eventName, float arg1);
-		void triggerEvent(const Ogre::String& eventName, const Ogre::String& arg1);
-		void triggerEvent(const Ogre::String& eventName, const Ogre::NameValuePairList& arg1);
-
 		void registerEvent(const Ogre::String& eventName, Coherent::UI::IEventHandler* handler);
 
 		Ogre::TexturePtr getTexture() const;
 		Ogre::MaterialPtr getTextureMaterial() const;
+		
+		Coherent::UI::View* getInternalView() const { return mView; }
 
 	private:
 		friend class CoherentUIViewListenerBridge;

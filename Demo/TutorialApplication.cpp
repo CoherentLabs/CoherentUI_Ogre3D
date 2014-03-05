@@ -50,7 +50,7 @@ bool TutorialApplication::keyPressed( const OIS::KeyEvent &arg )
 
 	if (arg.key == OIS::KC_H)
 	{
-		mView->triggerEvent("OnPlayerHealthChanged", std::rand() % 100);
+		mView->getInternalView()->TriggerEvent("OnPlayerHealthChanged", std::rand() % 100);
 	}
 
 	return true;

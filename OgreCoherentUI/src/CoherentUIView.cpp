@@ -209,51 +209,6 @@ namespace Ogre
 	}
 
 	//-----------------------------------------------------------------------
-	void CoherentUIView::triggerEvent(const Ogre::String& eventName)
-	{
-		if (mView)
-		{
-			mView->TriggerEvent(eventName.c_str());
-		}
-	}
-
-	//-----------------------------------------------------------------------
-	void CoherentUIView::triggerEvent(const Ogre::String& eventName, int arg1)
-	{
-		if (mView)
-		{
-			mView->TriggerEvent(eventName.c_str(), arg1);
-		}
-	}
-
-	//-----------------------------------------------------------------------
-	void CoherentUIView::triggerEvent(const Ogre::String& eventName, float arg1)
-	{
-		if (mView)
-		{
-			mView->TriggerEvent(eventName.c_str(), arg1);
-		}
-	}
-
-	//-----------------------------------------------------------------------
-	void CoherentUIView::triggerEvent(const Ogre::String& eventName, const Ogre::String& arg1)
-	{
-		if (mView)
-		{
-			mView->TriggerEvent(eventName.c_str(), arg1.c_str());
-		}
-	}
-
-	//-----------------------------------------------------------------------
-	void CoherentUIView::triggerEvent(const Ogre::String& eventName, const Ogre::NameValuePairList& arg1)
-	{
-		if (mView)
-		{
-			mView->TriggerEvent(eventName.c_str(), arg1);
-		}
-	}
-
-	//-----------------------------------------------------------------------
 	void CoherentUIView::registerEvent(const Ogre::String& eventName, Coherent::UI::IEventHandler* handler)
 	{
 		if (mView)
