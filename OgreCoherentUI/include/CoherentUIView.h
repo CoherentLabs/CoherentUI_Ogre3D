@@ -73,6 +73,7 @@ namespace Ogre
 
 		Ogre::TexturePtr getTexture() const;
 		Ogre::MaterialPtr getTextureMaterial() const;
+		void setTextureMaterial(Ogre::MaterialPtr material);
 		
 		Coherent::UI::View* getInternalView() const { return mView; }
 

@@ -228,5 +228,11 @@ namespace Ogre
 	{
 		return mTextureMaterial;
 	}
+
+	//-----------------------------------------------------------------------
+	void CoherentUIView::setTextureMaterial(Ogre::MaterialPtr material)
+	{
+		mTextureMaterial = material;
+	}
 }
 
