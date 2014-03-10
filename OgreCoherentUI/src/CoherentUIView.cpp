@@ -83,6 +83,11 @@ namespace Ogre
 		mTextureMaterial->getTechnique(0)->getPass(0)->setDepthWriteEnabled(enableDepthWrite);
 	}
 
+	void CoherentUIView::setTextureMaterial(Ogre::MaterialPtr material)
+	{
+		mTextureMaterial = material;
+	}
+
 	//-----------------------------------------------------------------------
 	void CoherentUIView::destroy()
 	{

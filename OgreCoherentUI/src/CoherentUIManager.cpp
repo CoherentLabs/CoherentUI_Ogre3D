@@ -196,7 +196,7 @@ namespace Ogre
 	{
 		Coherent::UI::SystemSettings settings;
 		settings.HostDirectory = COUI_HOST_PATH;
-		//settings.DebuggerPort = 9999;
+		settings.DebuggerPort = 9999;
 
 		mUISystem = ::InitializeUISystem(COHERENT_UI_SDK_VER, COHERENT_KEY, settings, mUIListener);
 		if (!mUISystem)
