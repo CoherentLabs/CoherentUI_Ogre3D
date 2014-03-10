@@ -56,6 +56,8 @@ namespace Ogre
 		: public Ogre::AllocatedObject<Ogre::CategorisedAllocPolicy<Ogre::MEMCATEGORY_GENERAL>>
 	{
 	public:
+		virtual ~CoherentUIView();
+
 		void destroy();
 		
 		int getId() const;

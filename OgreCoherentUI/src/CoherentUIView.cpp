@@ -83,19 +83,24 @@ namespace Ogre
 		mTextureMaterial->getTechnique(0)->getPass(0)->setDepthWriteEnabled(enableDepthWrite);
 	}
 
+	CoherentUIView::~CoherentUIView()
+	{
+		destroy();
+	}
+
 	//-----------------------------------------------------------------------
 	void CoherentUIView::destroy()
 	{
-		if (mViewListener)
-		{
-			OGRE_DELETE mViewListener;
-			mViewListener = NULL;
-		}
-
 		if (mView)
 		{
 			mView->Destroy();
 			mView = NULL;
+		}
+
+		if (mViewListener)
+		{
+			OGRE_DELETE mViewListener;
+			mViewListener = NULL;
 		}
 	}
 
